@@ -24,17 +24,20 @@ The HybridEncryption contract uses elliptic curve digital signature algorithms (
 # 1. Introduction
 DeGPUhub aims to provide decentralized GPU rentals for high-performance computing tasks. It combines Hybrid Encryption for secure data storage with a Reputation System for users and Governance features for decentralized decision-making. The contract showcases how blockchain can provide trustless encryption and ensure privacy in sensitive data exchanges, especially for AI model training, scientific computation, and decentralized applications.
 
-Hackathon Requirements
-Problem:
-Data Privacy & Security: Many decentralized networks lack privacy and security features that prevent sensitive user data from being exposed.
-Scalable Decentralized Infrastructure: Efficient, low-cost GPU rental markets require secure data transactions and real-time computations without compromising privacy.
-Solution:
-Hybrid Encryption for Secure Data: Using RSA for public key encryption and AES for symmetric encryption to ensure that user data, including reputation and rental agreements, remain secure.
-Decentralized Governance: Token-based voting for platform upgrades ensures community-driven decisions, governed by Compute Tokens.
-Integration with Mind Network: This project aims to leverage the Mind Network infrastructure for decentralized AI computing while ensuring data privacy through encryption.
-Features:
-Hybrid Encryption: Protects sensitive data with RSA (public key) for encryption and AES (symmetric key) for data privacy.
-Governance & Tokenization: Platform governance via the Compute Token, allowing users to propose and vote on platform improvements.
+2. Hackathon Requirements
+
+**Problem:**
+- Data Privacy & Security: Many decentralized networks lack privacy and security features that prevent sensitive user data from being exposed.
+- Scalable Decentralized Infrastructure: Efficient, low-cost GPU rental markets require secure data transactions and real-time computations without compromising privacy.
+
+**Solution:**
+- Hybrid Encryption for Secure Data: Using RSA for public key encryption and AES for symmetric encryption to ensure that user data, including reputation and rental agreements, remain secure.
+- Decentralized Governance: Token-based voting for platform upgrades ensures community-driven decisions, governed by Compute Tokens.
+- Integration with Mind Network: This project aims to leverage the Mind Network infrastructure for decentralized AI computing while ensuring data privacy through encryption.
+
+**Features:**
+- Hybrid Encryption: Protects sensitive data with RSA (public key) for encryption and AES (symmetric key) for data privacy.
+- Governance & Tokenization: Platform governance via the Compute Token, allowing users to propose and vote on platform improvements.
 Reputation System: Tracks user trustworthiness based on their behavior in the rental system.
 Secure Rental Transactions: Transparent and secure payments handled by Compute Tokens.
 Smart Contract Structure
@@ -82,6 +85,11 @@ bash
 Copy code
 npx hardhat run scripts/deploy.js --network rinkeby
 Deploy to Mainnet (Polygon/BSC/Other): Update the hardhat.config.js with the appropriate network details and use:
+
+ComputeToken deployed to: 0xd52D2CA7975Cfbc3342863A1B76d21104a5C8266
+Reputation deployed to: 0x41b5Cc57269f5E2AC278B860373a812f527daE7a
+HybridEncryption deployed to: 0x4B916e434E358060eb75ee0Add19Da15E93748f4
+GPUMarketplace deployed to: 0xaC41d927189A00f92133EF6c56f447058FD4ed58
 
 bash
 Copy code
