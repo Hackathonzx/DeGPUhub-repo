@@ -20,11 +20,13 @@ The HybridEncryption contract uses elliptic curve digital signature algorithms (
 6. Test the Contract
 7. How to Participate
 8. Future Enhancements
+9. Conclusion
+10. Licence
 
 # 1. Introduction
 DeGPUhub aims to provide decentralized GPU rentals for high-performance computing tasks. It combines Hybrid Encryption for secure data storage with a Reputation System for users and Governance features for decentralized decision-making. The contract showcases how blockchain can provide trustless encryption and ensure privacy in sensitive data exchanges, especially for AI model training, scientific computation, and decentralized applications.
 
-2. Hackathon Requirements
+# 2. Hackathon Requirements
 
 **Problem:**
 - Data Privacy & Security: Many decentralized networks lack privacy and security features that prevent sensitive user data from being exposed.
@@ -38,104 +40,63 @@ DeGPUhub aims to provide decentralized GPU rentals for high-performance computin
 **Features:**
 - Hybrid Encryption: Protects sensitive data with RSA (public key) for encryption and AES (symmetric key) for data privacy.
 - Governance & Tokenization: Platform governance via the Compute Token, allowing users to propose and vote on platform improvements.
-Reputation System: Tracks user trustworthiness based on their behavior in the rental system.
-Secure Rental Transactions: Transparent and secure payments handled by Compute Tokens.
-Smart Contract Structure
-This project involves four primary smart contracts:
+- Reputation System: Tracks user trustworthiness based on their behavior in the rental system.
+- Secure Rental Transactions: Transparent and secure payments handled by Compute Tokens.
 
-HybridEncryption.sol: Manages the encryption and storage of sensitive data.
-ComputeToken.sol: ERC20 token used for governance and payments on the platform.
-GPUMarketplace.sol: Handles the GPU rental market, including listing and renting GPUs.
-Reputation.sol: Manages user reputation based on platform behavior.
-Installation & Setup
-Prerequisites:
+# 3. Smart Contract Structure
+This project involves five primary smart contracts:
+
+- HybridEncryption.sol: Manages the encryption and storage of sensitive data.
+- ComputeToken.sol: ERC20 token used for governance and payments on the platform.
+- GPUMarketplace.sol: Handles the GPU rental market, including listing and renting GPUs.
+- Reputation.sol: Manages user reputation based on platform behavior.
+
+# 4. Installation & Setup
+- Prerequisites:
 Node.js (>=14.x) - For managing dependencies.
 Hardhat - Ethereum development environment.
 Metamask - Wallet to interact with the blockchain.
-Infura or Alchemy - For connecting to the Ethereum or Polygon network.
-Steps:
+Alchemy - For connecting to the Ethereum network.
+
+- Steps:
 Clone the Repository:
 
-bash
-Copy code
-git clone https://github.com/your-username/degpuhub-hybrid-encryption.git
-cd degpuhub-hybrid-encryption
-Install Dependencies:
+git clone https://github.com/Hackathonzx/DeGPUhub-repo.git
+cd DeGPUhub-repo.git
 
-bash
-Copy code
+- Install Dependencies:
+
 npm install
-Configure Hardhat Network: Modify hardhat.config.js to include your Infura or Alchemy endpoint and private key for deployment.
+Configure Hardhat Network: Modify hardhat.config.js to include your Alchemy endpoint and private key for deployment.
 
-javascript
-Copy code
-module.exports = {
-  solidity: "0.8.0",
-  networks: {
-    rinkeby: {
-      url: `https://rinkeby.infura.io/v3/YOUR_INFURA_KEY`,
-      accounts: [`0x${YOUR_PRIVATE_KEY}`],
-    },
-  },
-};
-Deployment
-Deploy to a Testnet (Rinkeby):
+# 5. Deployment
 
-bash
-Copy code
-npx hardhat run scripts/deploy.js --network rinkeby
-Deploy to Mainnet (Polygon/BSC/Other): Update the hardhat.config.js with the appropriate network details and use:
+npx hardhat run ignition/modules/deploy.js --network arbitrumSepolia
 
 ComputeToken deployed to: 0xd52D2CA7975Cfbc3342863A1B76d21104a5C8266
+
 Reputation deployed to: 0x41b5Cc57269f5E2AC278B860373a812f527daE7a
+
 HybridEncryption deployed to: 0x4B916e434E358060eb75ee0Add19Da15E93748f4
+
 GPUMarketplace deployed to: 0xaC41d927189A00f92133EF6c56f447058FD4ed58
 
-bash
-Copy code
-npx hardhat run scripts/deploy.js --network polygon
-Test the Contract
-1. Write the Test Cases:
-Create test scripts inside the /test directory. Example for testing HybridEncryption contract:
+# 6. Test the Contract
 
-javascript
-Copy code
-const { expect } = require("chai");
+Run the Tests:
 
-describe("HybridEncryption Contract", function () {
-  it("Should store encrypted data correctly", async function () {
-    const [owner, addr1] = await ethers.getSigners();
-    const HybridEncryption = await ethers.getContractFactory("HybridEncryption");
-    const hybridEncryption = await HybridEncryption.deploy();
+- npx hardhat test
 
-    const encryptedData = "0x1234"; // Simulating encrypted data
-    const publicKey = "0x5678"; // Simulating public key
-
-    await hybridEncryption.storeEncryptedData(addr1.address, encryptedData, publicKey);
-    const data = await hybridEncryption.getEncryptedData(addr1.address);
-
-    expect(data[0]).to.equal(encryptedData);
-    expect(data[1]).to.equal(publicKey);
-  });
-});
-2. Run the Tests:
-bash
-Copy code
-npx hardhat test
-How to Participate
+# 7. How to Participate
 Submit Your Project: On the Mind Network platform, submit your project by filling out the project overview and other relevant details.
 
-Overview: A brief description of how hybrid encryption will enhance privacy in DeGPUhub.
-GitHub: Provide a link to this repository.
-Experience: Mention if you have any prior ideathon experience or awards.
-Describe FHE Integration: Although we use hybrid encryption here, you can mention how Fully Homomorphic Encryption (FHE) could be implemented for future scalability in DeGPUhub for tasks like encrypted AI computations on user data.
+# 8. Future Enhancements
+- FHE Integration: For future scalability, explore the integration of Fully Homomorphic Encryption (FHE) to enable computations on encrypted data, ensuring that even sensitive computations (e.g., AI model training) can be processed securely.
+2. Cross-chain Deployments: Expand the platform’s reach by deploying the contract on multiple blockchains, ensuring greater user accessibility and lowering gas fees.
+3. Governance Upgrades: Add more governance features for voting on platform features and rental policies.
 
-Real-world Example: Use AI-driven reputation scoring as an example where FHE could enable secure computations of reputation scores without revealing private data.
-
-Future Enhancements
-FHE Integration: For future scalability, explore the integration of Fully Homomorphic Encryption (FHE) to enable computations on encrypted data, ensuring that even sensitive computations (e.g., AI model training) can be processed securely.
-Cross-chain Deployments: Expand the platform’s reach by deploying the contract on multiple blockchains, ensuring greater user accessibility and lowering gas fees.
-Governance Upgrades: Add more governance features for voting on platform features and rental policies.
-Conclusion
+# 9. Conclusion
 The DeGPUhub Hybrid Encryption project leverages hybrid encryption methods to ensure that data on the platform remains private and secure. By integrating this with a reputation system and decentralized governance, this contract addresses security and privacy challenges in decentralized GPU rental markets. It serves as a foundation for future innovations using privacy-preserving technologies, including Fully Homomorphic Encryption (FHE), in a Mind Network environment.
 
+# 10. Licence
+This project is licensed under the MIT License. 
