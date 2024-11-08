@@ -39,11 +39,15 @@ contract HybridEncryption {
         return (encryptedDataStore[user].encryptedData, encryptedDataStore[user].publicKey);
     }
 
-    // Simulating encryption/decryption interaction (decryption handled off-chain)
-    // This function is just a placeholder to interact with off-chain systems that handle decryption.
-    // The frontend or off-chain service would use the private key for decryption.
-    function decryptData(address user) external view returns (bytes memory) {
-        require(msg.sender == admin, "Only admin can decrypt data");
-        return encryptedDataStore[user].encryptedData;
+    // Simulate encryption of data (This is a placeholder)
+    function encrypt(string memory data) public view returns (bytes memory) {
+        // Simple placeholder: convert string to bytes (this is NOT real encryption)
+        return bytes(data);
+    }
+
+    // Simulate decryption of data (This is a placeholder)
+    function decrypt(bytes memory encryptedData) public view returns (string memory) {
+        // Simple placeholder: convert bytes back to string (this is NOT real decryption)
+        return string(encryptedData);
     }
 }
