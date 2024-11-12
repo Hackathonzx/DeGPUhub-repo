@@ -6,14 +6,14 @@ This repository contains the HybridEncryption smart contract, designed to demons
 
 The HybridEncryption contract uses elliptic curve digital signature algorithms (ECDSA) for simple verification and hybrid encryption techniques, combining public-key encryption (RSA) for data confidentiality and symmetric-key encryption (AES) for data privacy. The contract is deployed on the Ethereum-compatible chain, Arbitrum, but can be adapted to other blockchains.
 
-# Hackathon Requirements Addressed:
+# Project Addressed:
 1. Privacy & Security: Implementing hybrid encryption for sensitive user data, including reputation scores and rental contracts.
 2. Real-world Applications: Hybrid encryption enhances security in decentralized computing and AI, solving privacy concerns in decentralized infrastructures.
 3. Mind Network Features: Utilizing blockchain to store encrypted data and ensuring interoperability with Mind Network’s decentralized AI solutions.
 
 # Table of Contents
 1. Introduction
-2. Hackathon Requirements
+2. Project Addressed
 3. Smart Contract Structure
 4. Installation & Setup
 5. Deployment
@@ -26,7 +26,7 @@ The HybridEncryption contract uses elliptic curve digital signature algorithms (
 # 1. Introduction
 DeGPUhub aims to provide decentralized GPU rentals for high-performance computing tasks. It combines Hybrid Encryption for secure data storage with a Reputation System for users and Governance features for decentralized decision-making. The contract showcases how blockchain can provide trustless encryption and ensure privacy in sensitive data exchanges, especially for AI model training, scientific computation, and decentralized applications.
 
-# 2. Hackathon Requirements
+# 2. Project Addressed
 
 **Problem:**
 - Data Privacy & Security: Many decentralized networks lack privacy and security features that prevent sensitive user data from being exposed.
@@ -87,16 +87,14 @@ Run the Tests:
 
 - npx hardhat test
 
-# 7. How to Participate
-Submit Your Project: On the Mind Network platform, submit your project by filling out the project overview and other relevant details.
 
-# 8. Future Enhancements
+# 7. Future Enhancements
 - FHE Integration: For future scalability, explore the integration of Fully Homomorphic Encryption (FHE) to enable computations on encrypted data, ensuring that even sensitive computations (e.g., AI model training) can be processed securely.
 2. Cross-chain Deployments: Expand the platform’s reach by deploying the contract on multiple blockchains, ensuring greater user accessibility and lowering gas fees.
 3. Governance Upgrades: Add more governance features for voting on platform features and rental policies.
 
-# 9. Conclusion
+# 8. Conclusion
 The DeGPUhub Hybrid Encryption project leverages hybrid encryption methods to ensure that data on the platform remains private and secure. By integrating this with a reputation system and decentralized governance, this contract addresses security and privacy challenges in decentralized GPU rental markets. It serves as a foundation for future innovations using privacy-preserving technologies, including Fully Homomorphic Encryption (FHE), in a Mind Network environment.
 
-# 10. Licence
+# 9. Licence
 This project is licensed under the MIT License. 
